@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/app', function () {
-    return view('app');
+Route::get('/', function () {
+
+    // $comics = config('comics-db');
+
+    $data = [
+        'fumetti' => config('comics-db')
+    ];
+
+    dd($data);
+
+    return view('app', $data);
 });
